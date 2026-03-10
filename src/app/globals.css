@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+/* ── Design System Tokens ── */
+:root {
+  --surface: #fffffe;
+  --text: #232946;
+  --text-muted: #585a6e;
+  --lavender: #b8c1ec;
+  --rose: #eebbc3;
+  --accent: #4fc08d;
+  --shadow-color: #232946;
+
+  --font-heading: var(--font-instrument-serif);
+  --font-body: var(--font-instrument-sans);
+}
+
+[data-theme="dark"] {
+  --surface: #1a1a2e;
+  --text: #fffffe;
+  --text-muted: #b8c1ec;
+  --shadow-color: #b8c1ec;
+}
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-lavender: var(--lavender);
+  --color-rose: var(--rose);
+  --color-accent: var(--accent);
+  --color-shadow: var(--shadow-color);
+
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+
+  --shadow-brutal: 4px 4px 0 0 var(--shadow-color);
+  --shadow-brutal-sm: 2px 2px 0 0 var(--shadow-color);
+  --shadow-brutal-lg: 6px 6px 0 0 var(--shadow-color);
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
+}
+
+/* ── Base ── */
+body {
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 300;
+  font-size: 1.2em;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading), Georgia, serif;
+  font-style: italic;
+  line-height: 1.1;
+}
+
+/* ── Focus ── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ── Skip Link ── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: var(--surface);
+  font-weight: 600;
+  border-radius: 0 0 4px 4px;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ── Link Hover Fill Effect ── */
+.link-hover-fill {
+  position: relative;
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+.link-hover-fill::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background: var(--accent);
+  opacity: 0.2;
+  transition: height 0.3s ease;
+  z-index: -1;
+}
+.link-hover-fill:hover::after {
+  height: 100%;
+}
+.link-hover-fill:hover {
+  color: var(--text);
+}
+
+/* ── macOS Window Chrome ── */
+.macos-dots {
+  display: flex;
+  gap: 6px;
+  padding: 10px 14px;
+}
+.macos-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.macos-dots span:nth-child(1) { background: #ff5f57; }
+.macos-dots span:nth-child(2) { background: #febc2e; }
+.macos-dots span:nth-child(3) { background: #28c840; }
+
+/* ── Keyframes ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Prose Container ── */
+.prose-container {
+  max-width: 28em;
+  margin: 0 auto;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--lavender);
+  border-radius: 4px;
+}
