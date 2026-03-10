@@ -1,43 +1,25 @@
-"use client";
-
-import { useState } from "react";
+import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { FilterBar } from "@/components/ui/FilterBar";
-import { ProjectCard } from "@/components/ui/ProjectCard";
-import { projectCategories, projects } from "@/lib/constants";
+import { ProjectsClient } from "@/components/sections/ProjectsClient";
+
+export const metadata: Metadata = {
+  title: "Projects | Campbell River Website Design Portfolio",
+  description:
+    "Web design and development portfolio by Danny Tran. Websites built for local businesses across Campbell River and Vancouver Island, BC.",
+  alternates: { canonical: "https://dannytran.dev/projects" },
+};
 
 export default function ProjectsPage() {
-  const [activeCategory, setActiveCategory] = useState("All");
-
-  const filtered =
-    activeCategory === "All"
-      ? projects
-      : projects.filter((p) => p.category === activeCategory);
-
   return (
     <Container>
-      <SectionHeading subtitle="A collection of things I've built">
+      <SectionHeading
+        as="h1"
+        subtitle="Websites built for local businesses across Vancouver Island"
+      >
         Projects
       </SectionHeading>
-
-      <FilterBar
-        categories={projectCategories}
-        active={activeCategory}
-        onChange={setActiveCategory}
-      />
-
-      <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {filtered.map((project, i) => (
-          <ProjectCard key={project.slug} project={project} index={i} />
-        ))}
-      </div>
-
-      {filtered.length === 0 && (
-        <p className="mt-16 text-center text-text-muted">
-          No projects in this category yet.
-        </p>
-      )}
+      <ProjectsClient />
     </Container>
   );
 }

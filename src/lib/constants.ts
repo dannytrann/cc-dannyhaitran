@@ -2,9 +2,9 @@ import type { Project, BlogPost, Skill } from "@/types";
 
 export const siteConfig = {
   name: "Danny Tran",
-  title: "Danny Tran , Realtor & Web Developer",
+  title: "Campbell River Website Design & Web Development | Danny Tran",
   description:
-    "Realtor in Campbell River, BC. I also build websites for local businesses on Vancouver Island.",
+    "Campbell River website design by Danny Tran. I build fast, modern websites for local businesses on Vancouver Island. Also a Realtor at Royal LePage Advance Realty.",
   url: "https://dannytran.dev",
 };
 

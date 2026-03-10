@@ -4,8 +4,10 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SkillsGrid } from "@/components/sections/SkillsGrid";
 
 export const metadata: Metadata = {
-  title: "About",
-  description: "About Danny Tran — Realtor in Campbell River, BC and web developer for local businesses on Vancouver Island.",
+  title: "About Danny Tran | Campbell River Web Developer & Realtor",
+  description:
+    "Danny Tran is a Campbell River web developer and Realtor building websites for local businesses across Vancouver Island. Based in Campbell River, BC.",
+  alternates: { canonical: "https://dannytran.dev/about" },
 };
 
 export default function AboutPage() {
@@ -21,7 +23,7 @@ export default function AboutPage() {
 
         {/* Bio */}
         <div>
-          <SectionHeading>About Me</SectionHeading>
+          <SectionHeading as="h1">About Me</SectionHeading>
 
           <div className="space-y-6 text-text-muted" style={{ lineHeight: 1.8 }}>
             <p>

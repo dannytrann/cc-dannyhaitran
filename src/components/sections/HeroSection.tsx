@@ -33,7 +33,7 @@ export function HeroSection() {
           transition={{ duration: 0.8 }}
         >
           <p className="mb-4 text-sm font-medium tracking-widest text-accent uppercase">
-            Realtor & Web Developer
+            Campbell River Website Design & Web Development
           </p>
 
           <h1
@@ -45,9 +45,8 @@ export function HeroSection() {
           </h1>
 
           <p className="mb-10 max-w-xl text-lg text-text-muted" style={{ lineHeight: 1.7 }}>
-            Realtor in Campbell River, BC and web developer for local businesses
-            on Vancouver Island. Husband, father of two, and lover of the great
-            outdoors.
+            I build websites for local businesses across Vancouver Island and
+            help people buy and sell homes in Campbell River, BC.
           </p>
 
           <div className="flex flex-wrap gap-4">

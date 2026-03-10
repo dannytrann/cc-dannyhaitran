@@ -5,8 +5,10 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { blogPosts } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Blog",
-  description: "Thoughts on web development, creative coding, and accessibility.",
+  title: "Blog | Web Development & Vancouver Island Business Tips",
+  description:
+    "Thoughts on web development, local SEO, and building websites for small businesses on Vancouver Island and Campbell River, BC.",
+  alternates: { canonical: "https://dannytran.dev/blog" },
 };
 
 export default function BlogPage() {

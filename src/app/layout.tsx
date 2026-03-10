@@ -25,10 +25,38 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  metadataBase: new URL(siteConfig.url),
+  keywords: [
+    "Campbell River website design",
+    "Campbell River web developer",
+    "Vancouver Island website design",
+    "Campbell River web design",
+    "local business websites Campbell River",
+    "Vancouver Island web developer",
+    "Campbell River realtor",
+    "Next.js web developer BC",
+  ],
+  authors: [{ name: "Danny Tran", url: siteConfig.url }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
     type: "website",
+    locale: "en_CA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+  },
+  alternates: {
+    canonical: siteConfig.url,
   },
 };
 
