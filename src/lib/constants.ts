@@ -152,7 +152,7 @@ export const skills: Skill[] = [
 ];
 
 export const socialLinks = [
-  { name: "GitHub", href: "https://github.com/dannyhaitran", icon: "github" },
+  { name: "GitHub", href: "https://github.com/dannytrann", icon: "github" },
   {
     name: "LinkedIn",
     href: "https://linkedin.com/in/dannyhaitran",
