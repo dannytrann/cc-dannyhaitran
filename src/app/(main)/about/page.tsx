@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SkillsGrid } from "@/components/sections/SkillsGrid";
@@ -16,8 +17,15 @@ export default function AboutPage() {
       <div className="grid gap-16 lg:grid-cols-[1fr_2fr]">
         {/* Avatar / sidebar */}
         <div>
-          <div className="mb-6 aspect-square w-full max-w-[280px] border-2 border-shadow bg-lavender/20 shadow-brutal flex items-center justify-center">
-            <span className="text-6xl">◉</span>
+          <div className="relative mb-6 aspect-[3/4] w-full max-w-[280px] border-2 border-shadow shadow-brutal overflow-hidden">
+            <Image
+              src="/images/danny-portrait.jpg"
+              alt="Danny Tran, Campbell River Realtor and web developer"
+              fill
+              className="object-cover object-top"
+              sizes="280px"
+              priority
+            />
           </div>
         </div>
 
